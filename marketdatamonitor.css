@@ -1,0 +1,23 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: linear-gradient(120deg, #000000, rgba(18, 57, 124, 0) 50%), linear-gradient(-45deg, #000000, rgba(18, 57, 124, 0.8) 50%);
+}
+.page-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.page-container .left,
+.page-container .right {
+  width: 30%;
+  height: 100%;
+}
+.page-container .middle {
+  width: 40%;
+  height: 100%;
+}
+/*# sourceMappingURL=marketdatamonitor.css.map */
