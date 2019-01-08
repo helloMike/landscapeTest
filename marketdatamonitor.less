@@ -1,22 +1,193 @@
-body{
+*{
   padding:0;
   margin:0;
   box-sizing:border-box;
-  background:linear-gradient(120deg, rgba(0,0,0,1), rgba(18,57,124,0) 50%),
-  linear-gradient(-45deg, rgba(0,0,0,1), rgba(18,57,124,0.8) 50%);
 }
-.page-container{
+body{
   width:100%;
   height:100%;
-  display:flex;
-  flex-direction:row;
-  justify-content:space-between;
-  .left,.right{
-    width:30%;
-    height:100%;
+  background:url(./true.png) no-repeat #000C3B;
+  background-size:100%;
+  overflow:hidden;
+}
+.page-container{
+  .top-title{
+    width:100%;
+    height:100px;
+    background:url(./title.png) no-repeat;
+    background-size:100%;
+    text-align:center;
+    line-height:80px;
+    color:#FFF;
+    font-size:30px;
+    //border-bottom:1px solid #ccc;
   }
-  .middle{
-    width:40%;
+  .content{
+    width:100%;
     height:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    .left,.right{
+      width:32%;
+      height:100%;
+      &.left{
+        padding-left:20px;
+        .manager-top-5{
+          width:100%;
+          height:300px;
+          background:rgba(0,0,0,0.1);
+          .content-title{
+            width:100%;
+            height:50px;
+            background:url("./manager-title-background.png") transparent no-repeat;
+            background-size:100%;
+            color:#FFF;
+            font-size:18px;
+          }
+          .manager-content{
+            padding:0 10px;
+            color:#FFF;
+            text-align:center;
+            width:100%;
+            .manager-content-item{
+              display:flex;
+              flex-direction:row;
+              justify-content:space-between;
+              align-items:center;
+              height:30px;
+              .name,.range,.top-pic{
+                flex:0 1 auto;
+              }
+              .name{
+                width:150px;
+              }
+              .range{
+                width:100px;
+              }
+              .top-pic{
+                flex:1 1 auto;
+              }
+            }
+          }
+        }
+      }
+      &.right{
+        padding-right:20px;
+        .product-top-5{
+          width:100%;
+          height:300px;
+          background:rgba(0,0,0,0.1);
+          .content-title{
+            width:100%;
+            height:50px;
+            background:url("./product-title-background.png") transparent no-repeat;
+            background-size:100%;
+            color:#FFF;
+            font-size:18px;
+          }
+        }
+      }
+    }
+    .middle{
+      width:36%;
+      height:100%;
+      //border-right:1px solid #ccc;
+      .money-number{
+        width:85%;
+        height:100px;
+        margin:0 auto;
+        box-shadow:inset 0 0 30px #07417a;
+        //border:1px solid #ccc;
+        //background:rgba(23,46,86,0.5);
+        background:rgba(0,0,0,0.4);
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        position:relative;
+        i.corner{
+          width: 20px;
+          height: 20px;
+          border:2px solid #3974D6;
+          position: absolute;
+          &.topL{
+            border-right:none;
+            border-bottom:none;
+            top:-2px;
+            left:-2px;
+          }
+          &.topR{
+            border-left:none;
+            border-bottom:none;
+            top:-2px;
+            right:-2px;
+          }
+          &.bottomL{
+            border-right:none;
+            border-top:none;
+            bottom:-2px;
+            left:-2px;
+          }
+          &.bottomR{
+            border-left:none;
+            border-top:none;
+            bottom:-2px;
+            right:-2px;
+          }
+        }
+        .money,.number{
+          width:50%;
+          flex:0 1 auto;
+          color:#FFF;
+          display:flex;
+          flex-direction:row;
+          justify-content:center;
+          align-items:center;
+          &.money{
+            border-right:2px solid #346CCB;
+          }
+          .money-container,.number-container{
+            display:table;
+            height:auto;
+            //border:1px solid #ccc;
+            .left-part,.right-part{
+              display:table-cell;
+              vertical-align: middle;
+              &.left-part{
+                width:40px;
+                .icon-part{
+                  width:40px;
+                  height:40px;
+                  display:block;
+                  &.icon-money{
+                    background:url("./money.png") no-repeat;
+                    background-size: 40px;
+                  }
+                  &.icon-number{
+                    background:url("./number.png") no-repeat;
+                    background-size: 40px;
+                  }
+                }
+              }
+              &.right-part{
+                text-align:left;
+                padding-left:20px;
+                .right-part-title{
+                  font-size:16px;
+                  margin-bottom:10px;
+                  color:#FFF;
+                }
+                font-size:24px;
+                color:#6FA2F7;
+              }
+
+            }
+          }
+
+        }
+      }
+    }
   }
+
 }

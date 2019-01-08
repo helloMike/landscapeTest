@@ -5,13 +5,70 @@
     <meta name="decorator" content="default" />
     <script src="./jquery-1.8.3.min.js"></script>
     <script src="./echarts.min.js"></script>
+    <link rel="stylesheet" href="./numberAnimate.css">
     <link rel="stylesheet" href="./marketdatamonitor.css">
 </head>
 <body>
 <div class="page-container">
-    <div class="left"></div>
-    <div class="middle"></div>
-    <div class="right"></div>
+    <div class="top-title">市场数据监控</div>
+    <div class="content">
+        <div class="left">
+            <div class="manager-top-5">
+                <div class="content-title"></div>
+                <div class="manager-content">
+                        <div class="manager-content-item head">
+                            <div class="name">经营户名称</div>
+                            <div class="range">排行</div>
+                            <div class="top-pic">TOP图</div>
+                        </div>
+                        <div class="manager-content-item">
+                            <div class="name">王老五</div>
+                            <div class="range">1</div>
+                            <div class="top-pic"></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="money-number">
+                <div class="money">
+                    <div class="money-container">
+                        <div class="left-part">
+                            <i class="icon-part icon-money"></i>
+                        </div>
+                        <div class="right-part">
+                            <p class="right-part-title">金额(元)</p>
+                            <p id="money-value"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="number">
+                    <div class="number-container">
+                        <div class="left-part">
+                            <i class="icon-part icon-number"></i>
+                        </div>
+                        <div class="right-part">
+                            <p class="right-part-title">数量(条)</p>
+                            <p id="number-value"></p>
+                        </div>
+                    </div>
+                </div>
+                <i class="corner topL"></i>
+                <i class="corner topR"></i>
+                <i class="corner bottomL"></i>
+                <i class="corner bottomR"></i>
+            </div>
+        </div>
+        <div class="right">
+            <div class="product-top-5">
+                <div class="content-title"></div>
+                <div class="content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- <div class="manage-top-10"></div>
      <div class="total-money-num"></div>
      <div class="product-top-10"></div>
@@ -20,4 +77,11 @@
      <div class="detect-info"></div>-->
 </div>
 </body>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="numberAnimate.js"></script>
+<script>
+    $("#money-value").numberAnimate({num:'1775500', speed:2000, symbol:","});
+    $("#number-value").numberAnimate({num:'1775524', speed:2000, symbol:","});
+
+</script>
 </html>
