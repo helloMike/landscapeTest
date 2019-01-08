@@ -54,37 +54,44 @@ body {
 .page-container .content .left.left .manager-top-5 .manager-content,
 .page-container .content .right.left .manager-top-5 .manager-content {
   padding: 0 10px;
+  width: 100%;
+  /* .manager-content-item{
+              display:flex;
+              flex-direction:row;
+              justify-content:space-between;
+              align-items:center;
+              height:40px;
+              .name,.range,.top-pic{
+                flex:0 1 auto;
+              }
+              .name{
+                width:120px;
+              }
+              .range{
+                width:100px;
+              }
+              .top-pic{
+                flex:1 1 auto;
+              }
+            }*/
+}
+.page-container .content .left.left .manager-top-5 .manager-content .manage-table,
+.page-container .content .right.left .manager-top-5 .manager-content .manage-table {
+  width: 100%;
   color: #FFF;
   text-align: center;
-  width: 100%;
 }
-.page-container .content .left.left .manager-top-5 .manager-content .manager-content-item,
-.page-container .content .right.left .manager-top-5 .manager-content .manager-content-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 30px;
+.page-container .content .left.left .manager-top-5 .manager-content .manage-table tr,
+.page-container .content .right.left .manager-top-5 .manager-content .manage-table tr {
+  height: 35px;
 }
-.page-container .content .left.left .manager-top-5 .manager-content .manager-content-item .name,
-.page-container .content .right.left .manager-top-5 .manager-content .manager-content-item .name,
-.page-container .content .left.left .manager-top-5 .manager-content .manager-content-item .range,
-.page-container .content .right.left .manager-top-5 .manager-content .manager-content-item .range,
-.page-container .content .left.left .manager-top-5 .manager-content .manager-content-item .top-pic,
-.page-container .content .right.left .manager-top-5 .manager-content .manager-content-item .top-pic {
-  flex: 0 1 auto;
+.page-container .content .left.left .manager-top-5 .manager-content .manage-table tr td:first-child,
+.page-container .content .right.left .manager-top-5 .manager-content .manage-table tr td:first-child {
+  width: 120px;
 }
-.page-container .content .left.left .manager-top-5 .manager-content .manager-content-item .name,
-.page-container .content .right.left .manager-top-5 .manager-content .manager-content-item .name {
-  width: 150px;
-}
-.page-container .content .left.left .manager-top-5 .manager-content .manager-content-item .range,
-.page-container .content .right.left .manager-top-5 .manager-content .manager-content-item .range {
+.page-container .content .left.left .manager-top-5 .manager-content .manage-table tr td:nth-child(2),
+.page-container .content .right.left .manager-top-5 .manager-content .manage-table tr td:nth-child(2) {
   width: 100px;
-}
-.page-container .content .left.left .manager-top-5 .manager-content .manager-content-item .top-pic,
-.page-container .content .right.left .manager-top-5 .manager-content .manager-content-item .top-pic {
-  flex: 1 1 auto;
 }
 .page-container .content .left.right,
 .page-container .content .right.right {
@@ -104,6 +111,29 @@ body {
   background-size: 100%;
   color: #FFF;
   font-size: 18px;
+}
+.page-container .content .left.right .product-top-5 .product-content,
+.page-container .content .right.right .product-top-5 .product-content {
+  padding: 0 10px;
+  width: 100%;
+}
+.page-container .content .left.right .product-top-5 .product-content .product-table,
+.page-container .content .right.right .product-top-5 .product-content .product-table {
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+}
+.page-container .content .left.right .product-top-5 .product-content .product-table tr,
+.page-container .content .right.right .product-top-5 .product-content .product-table tr {
+  height: 35px;
+}
+.page-container .content .left.right .product-top-5 .product-content .product-table tr td:first-child,
+.page-container .content .right.right .product-top-5 .product-content .product-table tr td:first-child {
+  width: 120px;
+}
+.page-container .content .left.right .product-top-5 .product-content .product-table tr td:nth-child(2),
+.page-container .content .right.right .product-top-5 .product-content .product-table tr td:nth-child(2) {
+  width: 100px;
 }
 .page-container .content .middle {
   width: 36%;
