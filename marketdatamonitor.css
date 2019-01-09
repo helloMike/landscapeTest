@@ -27,10 +27,47 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+.page-container .content .content-title {
+  width: 100%;
+  height: 50px;
+  color: #FFF;
+  font-size: 18px;
+}
+.page-container .content .list .list-item {
+  width: 90%;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFF;
+  border-bottom: 1px dashed #ccc;
+}
+.page-container .content .list .list-item .item {
+  width: 33.3%;
+  flex: 0 1 auto;
+  text-align: center;
+  font-size: 16px;
+}
+.page-container .content .list .list-head .list-item .item {
+  color: #6FA2F7;
+  font-size: 16px;
+  font-weight: bold;
+}
+.page-container .content .list.real-time .item:first-child {
+  width: 30%;
+}
+.page-container .content .list.real-time .item:nth-child(2),
+.page-container .content .list.real-time .item:nth-child(3),
+.page-container .content .list.real-time .item:nth-child(4) {
+  width: 20%;
+}
 .page-container .content .left,
 .page-container .content .right {
   width: 32%;
   height: 100%;
+  position: relative;
 }
 .page-container .content .left.left,
 .page-container .content .right.left {
@@ -39,41 +76,19 @@ body {
 .page-container .content .left.left .manager-top-5,
 .page-container .content .right.left .manager-top-5 {
   width: 100%;
-  height: 300px;
+  height: 350px;
   background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 30px #07417a;
 }
 .page-container .content .left.left .manager-top-5 .content-title,
 .page-container .content .right.left .manager-top-5 .content-title {
-  width: 100%;
-  height: 50px;
   background: url("./manager-title-background.png") transparent no-repeat;
   background-size: 100%;
-  color: #FFF;
-  font-size: 18px;
 }
 .page-container .content .left.left .manager-top-5 .manager-content,
 .page-container .content .right.left .manager-top-5 .manager-content {
   padding: 0 10px;
   width: 100%;
-  /* .manager-content-item{
-              display:flex;
-              flex-direction:row;
-              justify-content:space-between;
-              align-items:center;
-              height:40px;
-              .name,.range,.top-pic{
-                flex:0 1 auto;
-              }
-              .name{
-                width:120px;
-              }
-              .range{
-                width:100px;
-              }
-              .top-pic{
-                flex:1 1 auto;
-              }
-            }*/
 }
 .page-container .content .left.left .manager-top-5 .manager-content .manage-table,
 .page-container .content .right.left .manager-top-5 .manager-content .manage-table {
@@ -93,6 +108,31 @@ body {
 .page-container .content .right.left .manager-top-5 .manager-content .manage-table tr td:nth-child(2) {
   width: 100px;
 }
+.page-container .content .left.left .price-analyze,
+.page-container .content .right.left .price-analyze {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 550px;
+  width: 100%;
+  padding-left: 20px;
+}
+.page-container .content .left.left .price-analyze .price-analyze-container,
+.page-container .content .right.left .price-analyze .price-analyze-container {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 30px #07417a;
+}
+.page-container .content .left.left .price-analyze .price-analyze-container .content-title,
+.page-container .content .right.left .price-analyze .price-analyze-container .content-title {
+  background: url("./price-title-background.png") transparent no-repeat;
+  background-size: 100%;
+}
+.page-container .content .left.left .price-analyze .price-analyze-container .price-analyze-content,
+.page-container .content .right.left .price-analyze .price-analyze-container .price-analyze-content {
+  padding: 0 10px;
+  height: 500px;
+}
 .page-container .content .left.right,
 .page-container .content .right.right {
   padding-right: 20px;
@@ -100,17 +140,14 @@ body {
 .page-container .content .left.right .product-top-5,
 .page-container .content .right.right .product-top-5 {
   width: 100%;
-  height: 300px;
+  height: 350px;
   background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 30px #07417a;
 }
 .page-container .content .left.right .product-top-5 .content-title,
 .page-container .content .right.right .product-top-5 .content-title {
-  width: 100%;
-  height: 50px;
   background: url("./product-title-background.png") transparent no-repeat;
   background-size: 100%;
-  color: #FFF;
-  font-size: 18px;
 }
 .page-container .content .left.right .product-top-5 .product-content,
 .page-container .content .right.right .product-top-5 .product-content {
@@ -135,9 +172,36 @@ body {
 .page-container .content .right.right .product-top-5 .product-content .product-table tr td:nth-child(2) {
   width: 100px;
 }
+.page-container .content .left.right .detect-analyze,
+.page-container .content .right.right .detect-analyze {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 550px;
+  width: 100%;
+  padding-right: 20px;
+}
+.page-container .content .left.right .detect-analyze .detect-analyze-container,
+.page-container .content .right.right .detect-analyze .detect-analyze-container {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 30px #07417a;
+}
+.page-container .content .left.right .detect-analyze .detect-analyze-container .content-title,
+.page-container .content .right.right .detect-analyze .detect-analyze-container .content-title {
+  background: url("./detect-title-background.png") transparent no-repeat;
+  background-size: 100%;
+}
+.page-container .content .left.right .detect-analyze .detect-analyze-container .detect-analyze-content,
+.page-container .content .right.right .detect-analyze .detect-analyze-container .detect-analyze-content {
+  padding: 0 10px;
+  height: 500px;
+}
 .page-container .content .middle {
   width: 36%;
   height: 100%;
+  position: relative;
 }
 .page-container .content .middle .money-number {
   width: 85%;
@@ -281,5 +345,27 @@ body {
   font-size: 16px;
   margin-bottom: 10px;
   color: #FFF;
+}
+.page-container .content .middle .real-time-trade {
+  width: 100%;
+  height: 750px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.page-container .content .middle .real-time-trade .content-title {
+  font-size: 24px;
+  text-align: center;
+  background: url(./title.png) no-repeat;
+  background-size: 100%;
+}
+.page-container .content .middle .real-time-trade .real-time-trade-content {
+  width: 90%;
+  height: 700px;
+  overflow: hidden;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 30px #07417a;
+  padding: 10px;
 }
 /*# sourceMappingURL=marketdatamonitor.css.map */

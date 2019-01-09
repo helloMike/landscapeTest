@@ -28,45 +28,68 @@ body{
     display:flex;
     flex-direction:row;
     justify-content:space-between;
+    .content-title{
+      width:100%;
+      height:50px;
+      color:#FFF;
+      font-size:18px;
+    }
+    .list{
+      .list-item{
+        width:90%;
+        height:50px;
+        margin:0 auto;
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        align-items: center;
+        color:#FFF;
+        border-bottom:1px dashed #ccc;
+        .item{
+          width:33.3%;
+          flex:0 1 auto;
+          text-align:center;
+          font-size:16px;
+        }
+      }
+      .list-head{
+        .list-item{
+          .item{
+            color:#6FA2F7;
+            font-size:16px;
+            font-weight:bold;
+          }
+        }
+      }
+      &.real-time{
+        .item{
+          &:first-child{
+            width:30%;
+          }
+          &:nth-child(2),&:nth-child(3),&:nth-child(4){
+            width:20%;
+          }
+        }
+      }
+    }
     .left,.right{
       width:32%;
       height:100%;
+      position:relative;
       &.left{
         padding-left:20px;
         .manager-top-5{
           width:100%;
-          height:300px;
+          height:350px;
           background:rgba(0,0,0,0.1);
+          box-shadow:inset 0 0 30px #07417a;
           .content-title{
-            width:100%;
-            height:50px;
             background:url("./manager-title-background.png") transparent no-repeat;
             background-size:100%;
-            color:#FFF;
-            font-size:18px;
           }
           .manager-content{
             padding:0 10px;
             width:100%;
-           /* .manager-content-item{
-              display:flex;
-              flex-direction:row;
-              justify-content:space-between;
-              align-items:center;
-              height:40px;
-              .name,.range,.top-pic{
-                flex:0 1 auto;
-              }
-              .name{
-                width:120px;
-              }
-              .range{
-                width:100px;
-              }
-              .top-pic{
-                flex:1 1 auto;
-              }
-            }*/
             .manage-table{
               width:100%;
               color:#FFF;
@@ -85,20 +108,39 @@ body{
             }
           }
         }
+        .price-analyze{
+          position:absolute;
+          bottom:0;
+          left:0;
+          height:550px;
+          width:100%;
+          padding-left:20px;
+          .price-analyze-container{
+            height:100%;
+            background:rgba(0,0,0,0.1);
+            box-shadow:inset 0 0 30px #07417a;
+            .content-title{
+              background:url("./price-title-background.png") transparent no-repeat;
+              background-size:100%;
+            }
+            .price-analyze-content{
+              padding:0 10px;
+              height:500px;
+            }
+          }
+
+        }
       }
       &.right{
         padding-right:20px;
         .product-top-5{
           width:100%;
-          height:300px;
+          height:350px;
           background:rgba(0,0,0,0.1);
+          box-shadow:inset 0 0 30px #07417a;
           .content-title{
-            width:100%;
-            height:50px;
             background:url("./product-title-background.png") transparent no-repeat;
             background-size:100%;
-            color:#FFF;
-            font-size:18px;
           }
           .product-content{
             padding:0 10px;
@@ -121,19 +163,42 @@ body{
             }
           }
         }
+        .detect-analyze{
+          position:absolute;
+          bottom:0;
+          left:0;
+          height:550px;
+          width:100%;
+          padding-right:20px;
+          .detect-analyze-container{
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.1);
+            box-shadow:inset 0 0 30px #07417a;
+            .content-title{
+              background:url("./detect-title-background.png") transparent no-repeat;
+              background-size:100%;
+            }
+            .detect-analyze-content{
+              padding:0 10px;
+              height:500px;
+            }
+
+          }
+
+        }
       }
     }
     .middle{
       width:36%;
       height:100%;
+      position:relative;
       //border-right:1px solid #ccc;
       .money-number{
         width:85%;
         height:100px;
         margin:0 auto;
         box-shadow:inset 0 0 30px #07417a;
-        //border:1px solid #ccc;
-        //background:rgba(23,46,86,0.5);
         background:rgba(0,0,0,0.4);
         display:flex;
         flex-direction:row;
@@ -218,7 +283,28 @@ body{
 
             }
           }
-
+        }
+      }
+      .real-time-trade{
+        width:100%;
+        height:750px;
+        position:absolute;
+        bottom:0;
+        left:0;
+        .content-title{
+          font-size:24px;
+          text-align:center;
+          background:url(./title.png) no-repeat;
+          background-size:100%;
+        }
+        .real-time-trade-content{
+          width:90%;
+          height:700px;
+          overflow:hidden;
+          margin:0 auto;
+          background:rgba(0,0,0,0.1);
+          box-shadow:inset 0 0 30px #07417a;
+          padding:10px
         }
       }
     }
