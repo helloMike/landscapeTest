@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./marketdatamonitor.css">
 </head>
 <body>
+<div class="wrapper"></div>
 <div class="page-container">
     <div class="top-title">市场数据监控</div>
     <div class="content">
@@ -801,7 +802,9 @@
         productChart.setOption(product_option);
         managerChart.setOption(manager_option);
         particleBg('body',{
-            color: 'rgba(255, 255, 255, 1)'
+            radius:50,
+            count:30,
+            color:'rgba(255,255,255,0.1)'
         });
     })
 </script>
