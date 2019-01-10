@@ -11,13 +11,22 @@
 <body>
 <div class="wrapper"></div>
 <div class="page-container">
-    <div class="top-title">市场数据监控</div>
+    <div class="top-title">
+        市场数据监控
+        <div class="date-time">
+            <span id="weekDay">星期四</span>
+            <span style="color:#6FA2F7;">/</span>
+            <span id="date">2019-01-10</span>
+            <span style="color:#6FA2F7;">/</span>
+            <span id="hhmmss">13:40:00</span>
+        </div>
+    </div>
     <div class="content">
         <div class="left">
             <div class="manager-top-5">
                 <div class="content-title"></div>
                 <div class="manager-content">
-                    <div id="manager-chart" style="width:5rem;height:2.5rem;margin:0 auto;"></div>
+                    <div id="manager-chart" style="height:250px;"></div>
                 </div>
             </div>
             <div class="price-analyze">
@@ -255,7 +264,7 @@
             <div class="product-top-5">
                 <div class="content-title"></div>
                 <div class="product-content">
-                    <table class="product-table" style="width:5rem;height:2.5rem;margin:0 auto;">
+                    <table class="product-table" style="height:250px;margin:0 auto;">
                         <thead>
                         <tr>
                             <td>商品名称</td>
@@ -268,7 +277,7 @@
                             <td>土豆</td>
                             <td>1</td>
                             <td rowspan="5">
-                                <div id="product-chart" style="width:3.5rem;height:2.5rem;"></div>
+                                <div id="product-chart" style="height:250px;"></div>
                             </td>
                         </tr>
                         <tr>
@@ -397,48 +406,111 @@
 <script type="text/javascript" src="./particle-bg.umd.min.js"></script>
 <script type="text/javascript" src="numberAnimate.js"></script>
 <script>
-    function setRem(){
-        var docEl = document.documentElement,
-            recalc = function() {
-                var clientWidth = docEl.clientWidth;
-                if (!clientWidth) return;
-                docEl.style.fontSize = 100 * (clientWidth /1920) + 'px';
-            };
-        if (!document.addEventListener) return;
-        recalc()
-        window.addEventListener('resize', recalc, false);
-        document.addEventListener('DOMContentLoaded', recalc, false);
-    }
-    function setHeightOfRemain(element,tag){
-        var $element = document.querySelector(element)
-        var docEl= document.documentElement;
-        var clientHeight = docEl.clientHeight;
-        if(!clientHeight){
-            return ;
-        }
-        if(tag == 'left' || tag == 'right'){
-            var elementHeight = clientHeight - (350 + 50 + 100 + 20 + 100)
-            $element.style.height = elementHeight
-        }else{
-            var elementHeight = clientHeight - (100 + 150 + 100 + 30 + 100)
-            $element.style.height = elementHeight
-        }
-    }
-    function pageInit(){
-        setRem()
-        setHeightOfRemain("#detect-analyze","right")
-        setHeightOfRemain("#price-analyze","left")
-        setHeightOfRemain("#real-time","middle")
-    }
     $(function(){
-        pageInit()
-        $("#money-value").numberAnimate({num:'1775500', speed:2000, symbol:","});
-        $("#number-value").numberAnimate({num:'1775524', speed:2000, symbol:","});
-        var productChart = echarts.init(document.getElementById('product-chart'));
-        var managerChart = echarts.init(document.getElementById('manager-chart'));
-        var data = [7.1, 5.2, 4.8, 3.5, 1.5];
-        var xMax = 100;
-        var product_option = {
+        function setHeightOfRemain(elements){
+            let docEl= document.documentElement;
+            let clientHeight = docEl.clientHeight;
+            if(!clientHeight){
+                return ;
+            }
+            for(let i = 0; i<elements.length;i++){
+                let elementHeight = ''
+                let $element = document.querySelector(elements[i].target)
+                if(elements[i].tag ==='left' || elements[i].tag ==='right'){
+                    elementHeight = clientHeight - (350 + 50 + 100 + 20 + 100)
+                    $element.style.height = elementHeight
+                }else{
+                    elementHeight = clientHeight - (100 + 150 + 100 + 30 + 100)
+                    $element.style.height = elementHeight
+                }
+            }
+
+        }
+
+        function getTime(){
+            var now = new Date()
+            var weekDay = "星期"
+            var year = now.getFullYear()
+            var month = now.getMonth()+1<10?'0'+(now.getMonth()+1):(now.getMonth()+1)
+            var day = now.getDate()<10?'0'+now.getDate():now.getDate()
+            var date_str = year+'-'+month+'-'+day
+            var hh = now.getHours()<10?'0'+now.getHours():now.getHours()
+            var mm= now.getMinutes()<10?'0'+now.getMinutes():now.getMinutes()
+            var ss = now.getSeconds()<10?'0'+now.getSeconds():now.getSeconds()
+            var hhmmss = hh+':'+mm+':'+ss
+            switch(now.getDay()){
+                case 1:
+                    weekDay+="一";
+                    break;
+                case 2:
+                    weekDay+="二";
+                    break;
+                case 3:
+                    weekDay+="三";
+                    break;
+                case 4:
+                    weekDay+="四";
+                    break;
+                case 5:
+                    weekDay+="五";
+                    break;
+                case 6:
+                    weekDay+="六";
+                    break;
+                default:
+                    weekDay+="日"
+            }
+            return{
+                date_str,weekDay,hhmmss
+            }
+        }
+
+        function setEchartsWidth(ids,percentOfClientWidth){
+            let docEl = document.documentElement,
+                clientWidth = docEl.clientWidth;
+                for(let i=0;i<ids.length;i++){
+                    let id = ids[i]
+                    let $element = document.querySelector('#'+id)
+                    $element.style.width = clientWidth * percentOfClientWidth
+                    if(id == 'product-chart'){
+                        $element.style.width = clientWidth * percentOfClientWidth * 0.6
+                    }
+            }
+        }
+
+        function pageInit(){
+            //设定底部列表的高度
+            setHeightOfRemain([
+                {target:"#detect-analyze",tag:"right"},
+                {target:"#price-analyze",tag:"left"},
+                {target:"#real-time",tag:"middle"}])
+            //设定echarts的宽度
+            setEchartsWidth(["product-chart","manager-chart"],0.32)
+            let now = getTime()
+            let $weekDay = $("#weekDay")
+            let $date = $("#date")
+            let $hhmmss = $("#hhmmss")
+            $weekDay.html(now.weekDay)
+            $date.html(now.date_str)
+            $hhmmss.html(now.hhmmss)
+            let timer = setInterval(function(){
+                let now = getTime()
+                $weekDay.html(now.weekDay)
+                $date.html(now.date_str)
+                $hhmmss.html(now.hhmmss)
+            },1000)
+            //金额与数量的滚动效果
+            $("#money-value").numberAnimate({num:'1775500', speed:2000, symbol:","});
+            $("#number-value").numberAnimate({num:'1775524', speed:2000, symbol:","});
+        }
+
+        pageInit();
+
+        let productChart = echarts.init(document.getElementById('product-chart'));
+        let managerChart = echarts.init(document.getElementById('manager-chart'));
+        let data = [7.1, 5.2, 4.8, 3.5, 1.5];
+        let xMax = 100;
+        let product_option = {
             baseOption:{
                 grid:{
                     top:0,
@@ -616,10 +688,10 @@
             }],
 
         };
-        var manager_option = {
+        let manager_option = {
             gird:{
-              width:'100%',
-              height:'80%',
+                width:'100%',
+                height:'80%'
             },
             "tooltip": {
                 "trigger": "item",
@@ -861,10 +933,13 @@
         };
         productChart.setOption(product_option);
         managerChart.setOption(manager_option);
+
         window.onresize = function(){
-            setHeightOfRemain("#detect-analyze","right")
-            setHeightOfRemain("#price-analyze","left")
-            setHeightOfRemain("#real-time","middle")
+            setHeightOfRemain([
+                {target:"#detect-analyze",tag:"right"},
+                {target:"#price-analyze",tag:"left"},
+                {target:"#real-time",tag:"middle"}])
+            setEchartsWidth(["product-chart","manager-chart"],0.32)
             productChart.resize()
             managerChart.resize()
         }
