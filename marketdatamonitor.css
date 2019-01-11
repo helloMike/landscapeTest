@@ -18,7 +18,7 @@ body {
   -webkit-border-radius: 6px;
 }
 ::-webkit-scrollbar-track-piece {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   /*滚动条的背景颜色*/
   -webkit-border-radius: 0;
   /*滚动条的圆角宽度*/
@@ -32,7 +32,7 @@ body {
 ::-webkit-scrollbar-thumb:vertical {
   /*垂直滚动条的样式*/
   height: 50px;
-  background-color: rgba(57, 116, 214, 0.3);
+  background-color: rgba(57, 116, 214, 0);
   -webkit-border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -72,7 +72,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  height: 100px;
+  height: inherit;
   line-height: 35px;
   font-size: 18px;
   padding-right: 20px;
@@ -88,7 +88,7 @@ body {
   width: 100%;
   height: 50px;
   color: #FFF;
-  font-size: 18px;
+  font-size: 16px;
 }
 .page-container .content .list .list-item {
   width: 90%;
@@ -105,26 +105,37 @@ body {
   width: 33.3%;
   flex: 0 1 auto;
   text-align: center;
-  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .page-container .content .list .list-head .list-item {
-  border-bottom: none;
+  border: none;
 }
 .page-container .content .list .list-head .list-item .item {
   color: #6FA2F7;
-  font-size: 16px;
   font-weight: bold;
 }
 .page-container .content .list .list-body {
-  overflow-y: auto;
+  overflow: auto;
 }
-.page-container .content .list.real-time .item:first-child {
+.page-container .content .list.real-time .list-item .item:first-child {
   width: 30%;
 }
-.page-container .content .list.real-time .item:nth-child(2),
-.page-container .content .list.real-time .item:nth-child(3),
-.page-container .content .list.real-time .item:nth-child(4) {
+.page-container .content .list.real-time .list-item .item:nth-child(2),
+.page-container .content .list.real-time .list-item .item:nth-child(3),
+.page-container .content .list.real-time .list-item .item:nth-child(4) {
   width: 20%;
+}
+.page-container .content .list.detect .list-item .item:nth-child(1),
+.page-container .content .list.detect .list-item .item:nth-child(2),
+.page-container .content .list.detect .list-item .item:nth-child(3) {
+  width: 30%;
+}
+.page-container .content .list.price .list-item .item:nth-child(1),
+.page-container .content .list.price .list-item .item:nth-child(2),
+.page-container .content .list.price .list-item .item:nth-child(3) {
+  width: 33%;
 }
 .page-container .content .left,
 .page-container .content .right {
@@ -382,8 +393,8 @@ body {
 .page-container .content .middle .money-number .money .number-container .right-part.right-part,
 .page-container .content .middle .money-number .number .number-container .right-part.right-part {
   text-align: left;
-  padding-left: 20px;
-  font-size: 24px;
+  padding-left: 15px;
+  font-size: 16px;
   color: #6FA2F7;
 }
 .page-container .content .middle .money-number .money .money-container .left-part.right-part .right-part-title,
@@ -415,5 +426,18 @@ body {
   box-shadow: inset 0 0 30px #07417a;
   padding: 10px;
   overflow: hidden;
+}
+@media screen and (max-width: 1500px) {
+  .page-container .top-title {
+    font-size: 28px;
+  }
+  .page-container .top-title .date-time {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .page-container .content .list .list-item {
+    height: 40px;
+    font-size: 14px;
+  }
 }
 /*# sourceMappingURL=marketdatamonitor.css.map */

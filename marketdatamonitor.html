@@ -26,7 +26,7 @@
             <div class="manager-top-5">
                 <div class="content-title"></div>
                 <div class="manager-content">
-                    <div id="manager-chart" style="height:250px;"></div>
+                    <div id="manager-chart" style="height:300px;"></div>
                 </div>
             </div>
             <div class="price-analyze">
@@ -316,83 +316,82 @@
                             <div class="list-body" id="detect-analyze">
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">1</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">2</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">3</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">4</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">5</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">6</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">7</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">8</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">9</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">10</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">11</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">12</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
                                 <div class="list-item">
                                     <div class="item">漳州水产贸易公司</div>
-                                    <div class="item">长豆</div>
+                                    <div class="item">13</div>
                                     <div class="item">药物残留</div>
                                     <div class="item">合格</div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -407,6 +406,7 @@
 <script type="text/javascript" src="numberAnimate.js"></script>
 <script>
     $(function(){
+        //设定底部列表的自适应高度
         function setHeightOfRemain(elements){
             let docEl= document.documentElement;
             let clientHeight = docEl.clientHeight;
@@ -417,6 +417,7 @@
                 let elementHeight = ''
                 let $element = document.querySelector(elements[i].target)
                 if(elements[i].tag ==='left' || elements[i].tag ==='right'){
+                    //去除掉顶部各个容器的高度以及间距
                     elementHeight = clientHeight - (350 + 50 + 100 + 20 + 100)
                     $element.style.height = elementHeight
                 }else{
@@ -426,7 +427,7 @@
             }
 
         }
-
+        //获取时间
         function getTime(){
             var now = new Date()
             var weekDay = "星期"
@@ -464,28 +465,50 @@
                 date_str,weekDay,hhmmss
             }
         }
-
+        //设定图表自适应宽度
         function setEchartsWidth(ids,percentOfClientWidth){
             let docEl = document.documentElement,
                 clientWidth = docEl.clientWidth;
                 for(let i=0;i<ids.length;i++){
                     let id = ids[i]
                     let $element = document.querySelector('#'+id)
-                    $element.style.width = clientWidth * percentOfClientWidth
+                    $element.style.width = clientWidth * percentOfClientWidth - 20 - 20
                     if(id == 'product-chart'){
                         $element.style.width = clientWidth * percentOfClientWidth * 0.6
                     }
             }
         }
-
+        //让图表滚动
+        function scrollList(obj){
+            for(let i=0;i<obj.length;i++){
+                let scrollTimer = ""
+                $(obj[i]).hover(function(){
+                    clearInterval(scrollTimer)
+                },function(){
+                    let $this = $(this)
+                    if($this.height()==$this[0].scrollHeight)
+                        return;
+                    let height = $this.find(".list-item").height()
+                     scrollTimer = setInterval(function(){
+                         let $temp = $this.find(".list-item").last()
+                         $this.find(".list-item").last().remove()
+                         $temp.css({
+                             'height':0
+                         })
+                         $this.prepend($temp)
+                         $temp.animate({'height':height},600,function(){
+                        })
+                    },2000)
+                }).trigger("mouseleave")
+            }
+        }
         function pageInit(){
-            //设定底部列表的高度
             setHeightOfRemain([
                 {target:"#detect-analyze",tag:"right"},
                 {target:"#price-analyze",tag:"left"},
                 {target:"#real-time",tag:"middle"}])
-            //设定echarts的宽度
-            setEchartsWidth(["product-chart","manager-chart"],0.32)
+            setEchartsWidth(["product-chart","manager-chart"],0.32);
+            scrollList(["#detect-analyze","#real-time","#price-analyze"]);
             let now = getTime()
             let $weekDay = $("#weekDay")
             let $date = $("#date")
@@ -494,7 +517,7 @@
             $date.html(now.date_str)
             $hhmmss.html(now.hhmmss)
             let timer = setInterval(function(){
-                let now = getTime()
+                 now = getTime()
                 $weekDay.html(now.weekDay)
                 $date.html(now.date_str)
                 $hhmmss.html(now.hhmmss)
