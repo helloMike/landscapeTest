@@ -18,7 +18,7 @@ body{
   -webkit-border-radius: 6px;
 }
 ::-webkit-scrollbar-track-piece {
-  background-color:rgba(0,0,0,0); /*滚动条的背景颜色*/
+  background-color:rgba(0,0,0,0.5); /*滚动条的背景颜色*/
   -webkit-border-radius: 0; /*滚动条的圆角宽度*/
 }
 ::-webkit-scrollbar {
@@ -27,7 +27,7 @@ body{
 }
 ::-webkit-scrollbar-thumb:vertical { /*垂直滚动条的样式*/
   height: 50px;
-  background-color:rgba(57,116,214,0);
+  background-color:rgba(57,116,214,0.5);
   -webkit-border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover { /*滚动条的hover样式*/
@@ -103,6 +103,7 @@ body{
         }
       }
       .list-head{
+        padding-right:10px;
         .list-item{
           border:none;
           .item{
@@ -112,7 +113,29 @@ body{
         }
       }
       .list-body{
-        overflow:auto;
+        position:relative;
+        .hide-scroll-bar{
+          position:absolute;
+          z-index:2;
+          right:0;
+          top:0;
+          width:20px;
+          height:100%;
+          background: -webkit-gradient(linear, left top, right top, from(#010C2D), to(#031F48));
+          background: -webkit-linear-gradient(left, #010C2D 0%, #031F48 100%);
+          background: -o-linear-gradient(left, #010C2D 0%, #031F48 100%);
+          background: linear-gradient(to right, #010C2D 0%, #031F48 100%);
+        }
+        .list-item-container{
+          position:absolute;
+          top:0;
+          left:0;
+          width:100%;
+          height:100%;
+          z-index:1;
+          overflow-y:auto;
+          padding-right:10px;
+        }
       }
       &.real-time{
         .list-item{
@@ -193,7 +216,7 @@ body{
               background-size:100%;
             }
             .price-analyze-content{
-              padding:0 10px 10px 10px;
+              padding:0 0 10px 10px;
               overflow:hidden;
             }
           }
@@ -218,6 +241,9 @@ body{
               width:100%;
               color:#FFF;
               text-align:center;
+              #product-no-data{
+                display: none;
+              }
               tr{
                 height:35px;
                 td{
@@ -244,7 +270,7 @@ body{
               background-size:100%;
             }
             .detect-analyze-content{
-              padding:0 10px 10px 10px;
+              padding:0 0 10px 10px;
               overflow:hidden;
             }
 
@@ -361,7 +387,7 @@ body{
           margin:0 auto;
           background:rgba(0,0,0,0.1);
           box-shadow:inset 0 0 30px #07417a;
-          padding:10px;
+          padding:10px 0 10px 10px;
           overflow:hidden;
         }
       }

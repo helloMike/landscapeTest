@@ -1,0 +1,37 @@
+{
+  "code": 0,
+  "data": [{
+    "topTenByAllMarket": [{
+      "merchantName": "张三",
+      "saleNum": "7000.00"
+    }, {
+      "merchantName": "李四",
+      "saleNum": "5000.00"
+    }, {
+      "merchantName": "王五",
+      "saleNum": "4500.00"
+    }, {
+      "merchantName": "林某",
+      "saleNum": "4000.00"
+    }, {
+      "merchantName": "王某",
+      "saleNum": "3500.00"
+    }, {
+      "merchantName": "孙某",
+      "saleNum": "3000.00"
+    }, {
+      "merchantName": "何某",
+      "saleNum": "2000.00"
+    }, {
+      "merchantName": "李某",
+      "saleNum": "1000.00"
+    }, {
+      "merchantName": "黄某",
+      "saleNum": "998.00"
+    }, {
+      "merchantName": "刘某",
+      "saleNum": "995.00"
+    }]
+  }],
+  "msg": "成功"
+}

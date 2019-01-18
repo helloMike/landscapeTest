@@ -1,0 +1,37 @@
+{
+  "code": 0,
+  "data": [{
+    "topTenByAllMarket": [{
+      "productName": "白菜",
+      "saleNum": "14.515"
+    }, {
+      "productName": "畜禽及肉类",
+      "saleNum": "12.977000000000002"
+    }, {
+      "productName": "茼蒿",
+      "saleNum": "10.099"
+    }, {
+      "productName": "韭菜",
+      "saleNum": "6.466"
+    }, {
+      "productName": "大葱",
+      "saleNum": "5.845"
+    }, {
+      "productName": "芦笋",
+      "saleNum": "5.159999999999999"
+    }, {
+      "productName": "油菜",
+      "saleNum": "4.1"
+    }, {
+      "productName": "角瓜",
+      "saleNum": "4.079"
+    }, {
+      "productName": "普通黄瓜",
+      "saleNum": "3.6820000000000004"
+    }, {
+      "productName": "青豆芽",
+      "saleNum": "3.3819999999999997"
+    }]
+  }],
+  "msg": "成功"
+}
